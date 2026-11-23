@@ -1,0 +1,322 @@
+{
+  "dataset": {
+    "source": "UCI Default of Credit Card Clients",
+    "rows": 30000,
+    "defaults": 6636,
+    "default_rate": 0.2212,
+    "train_rows": 24000,
+    "test_rows": 6000,
+    "train_default_rate": 0.22120833333333334,
+    "test_default_rate": 0.22116666666666668,
+    "currency": "NTD",
+    "cleaning": {
+      "rows_in": 30000,
+      "education_undocumented": 345,
+      "marriage_undocumented": 54,
+      "rows_with_any_null_in_required": 0,
+      "nonpositive_limit": 0,
+      "duplicate_ids": 0,
+      "rows_out": 30000,
+      "default_rate": 0.2212,
+      "defaults": 6636
+    }
+  },
+  "protocol": {
+    "seed": 42,
+    "test_size": 0.2,
+    "n_splits": 5,
+    "champion_rule": "Gradient boosting is the champion only if its training CV AUC exceeds the scorecard by at least 0.005. Otherwise the scorecard is the decision model.",
+    "weight_rule": "Class weights are used only if they improve that family's training CV AUC by at least 0.005.",
+    "excluded_features": [
+      "sex",
+      "marriage"
+    ],
+    "assumed_lgd": 0.75,
+    "assumed_ccf": 0.1,
+    "policy_approval_rate": 0.7
+  },
+  "eda": {
+    "repayment": [
+      {
+        "band": "1 month late",
+        "accounts": 3000,
+        "default_rate": 0.3436666666666667
+      },
+      {
+        "band": "2 months late",
+        "accounts": 2138,
+        "default_rate": 0.6936389148737138
+      },
+      {
+        "band": "3+ months late",
+        "accounts": 356,
+        "default_rate": 0.7162921348314607
+      },
+      {
+        "band": "Current or prepaid (<=0)",
+        "accounts": 18506,
+        "default_rate": 0.13725278288122772
+      }
+    ],
+    "utilization": [
+      {
+        "band": "0\u201330%",
+        "accounts": 11360,
+        "default_rate": 0.18142605633802816
+      },
+      {
+        "band": "30\u201370%",
+        "accounts": 4561,
+        "default_rate": 0.2405174303880728
+      },
+      {
+        "band": "70\u2013100%",
+        "accounts": 5923,
+        "default_rate": 0.2615228769204795
+      },
+      {
+        "band": "Credit balance",
+        "accounts": 468,
+        "default_rate": 0.1752136752136752
+      },
+      {
+        "band": "Overlimit",
+        "accounts": 1688,
+        "default_rate": 0.3080568720379147
+      }
+    ]
+  },
+  "baselines": {
+    "repayment_status": {
+      "auc": 0.6762175437114009,
+      "gini": 0.3524350874228017,
+      "ks": 0.3552695977839957
+    },
+    "utilization": {
+      "auc": 0.5346528849613237,
+      "gini": 0.06930576992264736,
+      "ks": 0.10177451604730858
+    }
+  },
+  "models": {
+    "scorecard": {
+      "weighting": "unweighted",
+      "cv_auc": 0.7576325714942762,
+      "cv_auc_std": 0.008977908055654406,
+      "cv_ks": 0.41562010492411944,
+      "cv_ks_std": 0.019123808902620058,
+      "cv_auc_folds": [
+        0.763628100171436,
+        0.760578106059919,
+        0.744108076163875,
+        0.7534291780149712,
+        0.7664193970611796
+      ],
+      "unweighted_cv_auc": 0.7576325714942762,
+      "balanced_cv_auc": 0.7578513883156915,
+      "test_auc": 0.7396024009400957,
+      "test_gini": 0.4792048018801913,
+      "test_ks": 0.3889732918716783,
+      "test_auc_calibrated": 0.7392463334156311,
+      "test_gini_calibrated": 0.4784926668312621,
+      "test_ks_calibrated": 0.3848601314192338,
+      "brier_raw": 0.14083096100909753,
+      "brier_calibrated": 0.14039113097643274,
+      "brier_base_rate": 0.17225197395833333,
+      "ece_raw": 0.01702885214449936,
+      "ece_calibrated": 0.017111365241922402,
+      "kept_features": [
+        "pay_1",
+        "months_late",
+        "util_1",
+        "pay_ratio_1",
+        "limit_bal",
+        "age",
+        "education"
+      ],
+      "screened_out_low_iv": [],
+      "dropped_wrong_sign": [],
+      "intercept": -1.2563657722574328,
+      "base_points": 549.8124914858214,
+      "coefficients": {
+        "pay_1": -0.5860220524589372,
+        "months_late": -0.5107984477584441,
+        "util_1": -0.07717712468986102,
+        "pay_ratio_1": -0.050334135634079465,
+        "limit_bal": -0.412148843093987,
+        "age": -0.4062628902257704,
+        "education": -0.35386393961858936
+      },
+      "psi": 0.006638171702194649
+    },
+    "gradient_boosting": {
+      "weighting": "unweighted",
+      "cv_auc": 0.7874434093263225,
+      "cv_auc_std": 0.0060773888023664705,
+      "cv_ks": 0.441266769305601,
+      "cv_ks_std": 0.00866154289999227,
+      "cv_auc_folds": [
+        0.7887538917173063,
+        0.7857972882968122,
+        0.777844658462636,
+        0.793367023061367,
+        0.7914541850934917
+      ],
+      "unweighted_cv_auc": 0.7874434093263225,
+      "balanced_cv_auc": 0.787226376561769,
+      "test_auc": 0.7823740447416262,
+      "test_gini": 0.5647480894832524,
+      "test_ks": 0.42788108699287586,
+      "test_auc_calibrated": 0.7822466473936518,
+      "test_gini_calibrated": 0.5644932947873036,
+      "test_ks_calibrated": 0.42443748829839234,
+      "brier_raw": 0.13490347229440142,
+      "brier_calibrated": 0.134871558728301,
+      "brier_base_rate": 0.17225197395833333,
+      "ece_raw": 0.011859721992785734,
+      "ece_calibrated": 0.014295317353245292,
+      "psi": 0.0027069572903549786
+    }
+  },
+  "champion": "gradient_boosting",
+  "capture": {
+    "at_10pct": 0.31122833458929916,
+    "at_20pct": 0.5041446872645065,
+    "at_30pct": 0.6262245666917859,
+    "baseline_at_30pct": 0.5365486058779201
+  },
+  "expected_loss": {
+    "assumptions": {
+      "lgd": 0.75,
+      "ccf": 0.1
+    },
+    "holdout": {
+      "accounts": 6000,
+      "defaults": 1327,
+      "observed_default_rate": 0.22116666666666668,
+      "mean_pd": 0.2225363511171114,
+      "total_ead": 380671132.59999996,
+      "total_expected_loss": 58461193.36976726,
+      "el_rate": 0.15357401274552876
+    },
+    "slices": [
+      {
+        "accounts": 4676,
+        "defaults": 667,
+        "observed_default_rate": 0.14264328485885372,
+        "mean_pd": 0.13937380864989407,
+        "total_ead": 306942725.4,
+        "total_expected_loss": 26815174.631579287,
+        "el_rate": 0.08736214418059406,
+        "segment": "Current or prepaid"
+      },
+      {
+        "accounts": 1324,
+        "defaults": 660,
+        "observed_default_rate": 0.4984894259818731,
+        "mean_pd": 0.5162433364469514,
+        "total_ead": 73728407.2,
+        "total_expected_loss": 31646018.738187976,
+        "el_rate": 0.429224229032144,
+        "segment": "Already late"
+      },
+      {
+        "accounts": 6000,
+        "defaults": 1327,
+        "observed_default_rate": 0.22116666666666668,
+        "mean_pd": 0.2225363511171114,
+        "total_ead": 380671132.59999996,
+        "total_expected_loss": 58461193.36976726,
+        "el_rate": 0.15357401274552876,
+        "segment": "Full holdout"
+      }
+    ],
+    "lgd_sensitivity": [
+      {
+        "lgd": 0.75,
+        "ccf": 0.1,
+        "total_expected_loss": 58461193.36976726,
+        "el_rate": 0.15357401274552876
+      },
+      {
+        "lgd": 0.45,
+        "ccf": 0.1,
+        "total_expected_loss": 35076716.02186036,
+        "el_rate": 0.09214440764731727
+      }
+    ]
+  },
+  "policy": {
+    "approval_rate": 0.7,
+    "accounts_accepted": 4200.0,
+    "pd_threshold": 0.22950819672131148,
+    "observed_bad_rate": 0.1180952380952381,
+    "mean_pd": 0.11368482463127556,
+    "defaults_excluded_share": 0.6262245666917859,
+    "non_defaults_excluded_share": 0.20736143804836293,
+    "accepted_ead": 289387541.20000005,
+    "accepted_expected_loss": 22540895.878271006,
+    "accepted_el_rate": 0.07789172880353082
+  },
+  "fairness": {
+    "ratios_vs_highest_group": {
+      "sex": 0.9538576257898879,
+      "education": 0.7026050872204719,
+      "marriage": 0.9822999850456109,
+      "age": 0.810054306540458
+    },
+    "note": "Sex and marital status are not model inputs. Approval rates are still compared at the 70% cutoff because other features can proxy for them. The ratio of the lowest group approval rate to the highest is a screening statistic in the spirit of the four-fifths rule of thumb. It is not a legal conclusion under ECOA or Regulation B."
+  },
+  "explainability_method": "shap",
+  "top_boosting_features": [
+    {
+      "feature": "pay_1",
+      "mean_abs_shap": 0.3702085018157959,
+      "label": "Most recent repayment status"
+    },
+    {
+      "feature": "max_delay",
+      "mean_abs_shap": 0.3465763032436371,
+      "label": "Worst repayment status in 6 months"
+    },
+    {
+      "feature": "bill_amt1",
+      "mean_abs_shap": 0.1004219651222229,
+      "label": "Current statement balance"
+    },
+    {
+      "feature": "pay_amt1",
+      "mean_abs_shap": 0.09999708831310272,
+      "label": "Current payment amount"
+    },
+    {
+      "feature": "limit_bal",
+      "mean_abs_shap": 0.09396807104349136,
+      "label": "Credit limit"
+    },
+    {
+      "feature": "util_2",
+      "mean_abs_shap": 0.09140933305025101,
+      "label": "Utilization, 2 months prior"
+    },
+    {
+      "feature": "months_severe",
+      "mean_abs_shap": 0.08926049619913101,
+      "label": "Count of statements 2+ months late"
+    },
+    {
+      "feature": "pay_amt2",
+      "mean_abs_shap": 0.08334438502788544,
+      "label": "Payment amount, 2 months prior"
+    }
+  ],
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "shap": "0.54.1",
+    "matplotlib": "3.11.2"
+  }
+}

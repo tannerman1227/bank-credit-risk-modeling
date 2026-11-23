@@ -1,0 +1,8 @@
+feature,information_value,n_bins,strength
+pay_1,0.8721924637722205,4,very strong
+months_late,0.8572134928002877,4,very strong
+limit_bal,0.17120678675289663,5,medium
+pay_ratio_1,0.14417584168171374,5,medium
+util_1,0.05960918654709317,5,weak
+education,0.0360666245754595,4,weak
+age,0.02239815468137857,5,weak
