@@ -1,0 +1,30 @@
+account_id,position,calibrated_pd,scorecard_points,rank,source,reason,shortfall
+12970,marginal decline,0.22950819672131148,550.4721614645917,1,scorecard,Late-payment history is 1 month late,8.89783484995594
+12970,marginal decline,0.22950819672131148,550.4721614645917,2,scorecard,"Credit limit is NT$10,000–50,000",6.667595093226916
+12970,marginal decline,0.22950819672131148,550.4721614645917,3,scorecard,Current utilization is 70–100%,0.5273562177765985
+12970,marginal decline,0.22950819672131148,550.4721614645917,1,shap,Worst repayment status in 6 months (2) increased predicted default risk,0.5218840837478638
+12970,marginal decline,0.22950819672131148,550.4721614645917,2,shap,"Utilization, 2 months prior (0.98) increased predicted default risk",0.13822722434997559
+12970,marginal decline,0.22950819672131148,550.4721614645917,3,shap,"Credit limit (50,000) increased predicted default risk",0.10982920974493027
+12970,marginal decline,0.22950819672131148,550.4721614645917,4,shap,Current utilization (0.98) increased predicted default risk,0.07846622914075851
+15661,marginal decline,0.22950819672131148,537.1613345237188,1,scorecard,Recent repayment status is 1 month late,12.93505539836641
+15661,marginal decline,0.22950819672131148,537.1613345237188,2,scorecard,Late-payment history is 1 month late,8.89783484995594
+15661,marginal decline,0.22950819672131148,537.1613345237188,3,scorecard,Education category is University,1.0647772960567738
+15661,marginal decline,0.22950819672131148,537.1613345237188,4,scorecard,Recent payment pattern is No positive statement balance,0.2688263486408181
+15661,marginal decline,0.22950819672131148,537.1613345237188,1,shap,"Payment amount, 3 months prior (0.00) increased predicted default risk",0.1311059296131134
+15661,marginal decline,0.22950819672131148,537.1613345237188,2,shap,"Payment amount, 6 months prior (544) increased predicted default risk",0.11066777259111404
+15661,marginal decline,0.22950819672131148,537.1613345237188,3,shap,Current statement balance (-1.00) increased predicted default risk,0.1065613403916359
+15661,marginal decline,0.22950819672131148,537.1613345237188,4,shap,Worst repayment status in 6 months (1) increased predicted default risk,0.09868559241294861
+5762,marginal decline,0.22950819672131148,537.1968253570807,1,scorecard,Late-payment history is 2 months late,15.409262538970674
+5762,marginal decline,0.22950819672131148,537.1968253570807,2,scorecard,Recent repayment status is 1 month late,12.93505539836641
+5762,marginal decline,0.22950819672131148,537.1968253570807,1,shap,Worst repayment status in 6 months (2) increased predicted default risk,0.533359169960022
+5762,marginal decline,0.22950819672131148,537.1968253570807,2,shap,"Current statement balance (6,077) increased predicted default risk",0.09782504290342331
+5762,marginal decline,0.22950819672131148,537.1968253570807,3,shap,"Payment ratio, 4 months prior (0.88) increased predicted default risk",0.08689410984516144
+5762,marginal decline,0.22950819672131148,537.1968253570807,4,shap,Current payment amount (29) increased predicted default risk,0.08506560325622559
+16555,highest-risk decline,0.8367346938775511,485.06974828069656,1,scorecard,Recent repayment status is 3+ months late,39.481024092617744
+16555,highest-risk decline,0.8367346938775511,485.06974828069656,2,scorecard,Late-payment history is 3+ months late,27.325817506792905
+16555,highest-risk decline,0.8367346938775511,485.06974828069656,3,scorecard,"Credit limit is NT$10,000–50,000",6.667595093226916
+16555,highest-risk decline,0.8367346938775511,485.06974828069656,4,scorecard,Recent payment pattern is No payment,1.2678873286525327
+16555,highest-risk decline,0.8367346938775511,485.06974828069656,1,shap,Most recent repayment status (3) increased predicted default risk,1.169081687927246
+16555,highest-risk decline,0.8367346938775511,485.06974828069656,2,shap,Worst repayment status in 6 months (7) increased predicted default risk,0.5630887746810913
+16555,highest-risk decline,0.8367346938775511,485.06974828069656,3,shap,Count of statements 2+ months late (6) increased predicted default risk,0.297303169965744
+16555,highest-risk decline,0.8367346938775511,485.06974828069656,4,shap,"Current statement balance (2,300) increased predicted default risk",0.17910051345825195

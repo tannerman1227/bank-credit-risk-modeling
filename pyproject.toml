@@ -1,0 +1,11 @@
+[project]
+name = "credit-risk"
+version = "1.0.0"
+description = "Retail credit-card probability of default and expected-loss analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

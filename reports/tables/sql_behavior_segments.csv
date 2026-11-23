@@ -1,0 +1,5 @@
+segment,accounts,default_rate,avg_utilization,avg_balance
+"Current, utilization under 70%",16216,0.1302,0.1823,30038.0
+Current but highly utilized,6966,0.1572,0.9412,108013.0
+1 month late,3688,0.3395,0.3229,27153.0
+2+ months late,3130,0.6955,0.6421,62951.0

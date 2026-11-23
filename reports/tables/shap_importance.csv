@@ -1,0 +1,40 @@
+feature,mean_abs_shap,label
+pay_1,0.3702085,Most recent repayment status
+max_delay,0.3465763,Worst repayment status in 6 months
+bill_amt1,0.100421965,Current statement balance
+pay_amt1,0.09999709,Current payment amount
+limit_bal,0.09396807,Credit limit
+util_2,0.09140933,"Utilization, 2 months prior"
+months_severe,0.089260496,Count of statements 2+ months late
+pay_amt2,0.083344385,"Payment amount, 2 months prior"
+util_recent_minus_old,0.07625202,Utilization change (recent minus oldest)
+util_1,0.06788877,Current utilization
+pay_amt6,0.057252854,"Payment amount, 6 months prior"
+pay_amt3,0.05274491,"Payment amount, 3 months prior"
+age,0.049183015,Age
+months_late,0.044004675,Count of late statements (of 6)
+pay_amt5,0.038772326,"Payment amount, 5 months prior"
+pay_amt4,0.037250333,"Payment amount, 4 months prior"
+avg_util,0.03548486,Average utilization
+pay_ratio_3,0.034914628,"Payment ratio, 3 months prior"
+pay_ratio_4,0.03359404,"Payment ratio, 4 months prior"
+pay_ratio_1,0.031986874,Current payment relative to bill
+avg_pay_ratio,0.029621277,Average payment-to-bill ratio
+education,0.028879464,Education
+bill_amt5,0.026611583,"Statement balance, 5 months prior"
+util_3,0.022091713,"Utilization, 3 months prior"
+pay_ratio_5,0.020042656,"Payment ratio, 5 months prior"
+util_5,0.01818704,"Utilization, 5 months prior"
+util_6,0.016590968,"Utilization, 6 months prior"
+pay_ratio_6,0.016026093,"Payment ratio, 6 months prior"
+bill_amt3,0.015004652,"Statement balance, 3 months prior"
+bill_amt2,0.01448112,"Statement balance, 2 months prior"
+util_4,0.012192771,"Utilization, 4 months prior"
+bill_amt4,0.010891924,"Statement balance, 4 months prior"
+pay_2,0.010580386,"Repayment status, 2 months prior"
+pay_ratio_2,0.008897812,"Payment ratio, 2 months prior"
+pay_3,0.006493915,"Repayment status, 3 months prior"
+bill_amt6,0.0049547935,"Statement balance, 6 months prior"
+pay_6,0.004933521,"Repayment status, 6 months prior"
+pay_5,0.0044612912,"Repayment status, 5 months prior"
+pay_4,0.0025468315,"Repayment status, 4 months prior"
